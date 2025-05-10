@@ -8,8 +8,25 @@ import (
 	"neko-acm-client/pkg/pb"
 )
 
+type ClientTokenAuth struct {
+}
+
+func (c ClientTokenAuth) GetRequestMetadata(ctx context.Context, uri ...string) (map[string]string, error) {
+	return map[string]string{
+		"authorization": "Bearer ",
+	}, nil
+}
+
+func (c ClientTokenAuth) RequireTransportSecurity() bool {
+	return false
+}
+
 func main() {
-	dial, err := grpc.Dial("127.0.0.1:14516", grpc.WithTransportCredentials(insecure.NewCredentials()))
+	var opts []grpc.DialOption
+	opts = append(opts, grpc.WithTransportCredentials(insecure.NewCredentials()))
+	opts = append(opts, grpc.WithPerRPCCredentials(new(ClientTokenAuth)))
+
+	dial, err := grpc.Dial("127.0.0.1:14516", opts...)
 	if err != nil {
 		panic(err)
 	}
