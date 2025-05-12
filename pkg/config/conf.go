@@ -1,12 +1,12 @@
 package config
 
 import (
-	"neko-acm/pkg/utils"
+	"nekoacm-client/pkg/utils"
 )
 
 type Config struct {
-	Server ServerConf `yaml:"server" json:"server"`
-	Grpc   GrpcConf   `yaml:"grpc" json:"grpc"`
+	Server   ServerConf   `yaml:"server" json:"server"`
+	NekoGrpc NekoGrpcConf `yaml:"neko-grpc" json:"neko-grpc"`
 }
 
 // InitConfig 初始化
@@ -31,5 +31,5 @@ func InitConfig() error {
 
 func (c *Config) Default() {
 	c.Server.Default()
-	c.Grpc.Default()
+	c.NekoGrpc.Default()
 }
