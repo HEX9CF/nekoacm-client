@@ -48,7 +48,7 @@ func ProblemParse(pd dto.ProblemData) (dto.Problem, error) {
 	log.Println("请求解析题目...")
 
 	// 创建上下文
-	ctx, cancel := context.WithTimeout(context.Background(), 30*time.Second)
+	ctx, cancel := context.WithTimeout(context.Background(), 60*time.Second)
 	defer cancel()
 
 	// 使用converter转换DTO到PB
@@ -75,7 +75,7 @@ func ProblemTranslate(pi dto.TranslateInstruction) (dto.Problem, error) {
 	log.Println("请求翻译题目...")
 
 	// 创建上下文
-	ctx, cancel := context.WithTimeout(context.Background(), 30*time.Second)
+	ctx, cancel := context.WithTimeout(context.Background(), 60*time.Second)
 	defer cancel()
 
 	// 使用converter转换DTO到PB

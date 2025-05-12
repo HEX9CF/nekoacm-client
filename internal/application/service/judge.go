@@ -14,7 +14,7 @@ func Submit(s dto.Submission) (dto.Judgement, error) {
 	log.Println("请求评测代码...")
 
 	// 创建上下文
-	ctx, cancel := context.WithTimeout(context.Background(), 10*time.Second)
+	ctx, cancel := context.WithTimeout(context.Background(), 30*time.Second)
 	defer cancel()
 
 	// 使用converter转换DTO到PB
