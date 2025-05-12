@@ -5,3 +5,4 @@ neko-grpc:
     host: localhost
     port: 14516
     token:
+    timeout: 60
