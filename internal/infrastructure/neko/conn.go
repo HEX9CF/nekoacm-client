@@ -4,6 +4,7 @@ import (
 	"context"
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/credentials/insecure"
+	"nekoacm-client/pkg/config"
 )
 
 var (
@@ -15,7 +16,7 @@ type ClientTokenAuth struct {
 
 func (c ClientTokenAuth) GetRequestMetadata(ctx context.Context, uri ...string) (map[string]string, error) {
 	return map[string]string{
-		"authorization": "Bearer ",
+		"authorization": "Bearer " + config.Conf.NekoGrpc.Token,
 	}, nil
 }
 
