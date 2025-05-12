@@ -35,8 +35,8 @@ func RequestToTestcaseInstruction(request *pb.TestcaseInstructionRequest) dto.Te
 	}
 }
 
-// TestcaseToGrpc 将测试用例DTO转换为gRPC测试用例
-func TestcaseToGrpc(testcase dto.Testcase) *pb.TestcaseResponse {
+// TestcaseToResponse 将测试用例DTO转换为gRPC测试用例
+func TestcaseToResponse(testcase dto.Testcase) *pb.TestcaseResponse {
 	return &pb.TestcaseResponse{
 		TestInput:         testcase.TestInput,
 		TestOutput:        testcase.TestOutput,
@@ -45,8 +45,8 @@ func TestcaseToGrpc(testcase dto.Testcase) *pb.TestcaseResponse {
 	}
 }
 
-// GrpcToTestcase 将gRPC测试用例转换为DTO测试用例
-func GrpcToTestcase(tc *pb.TestcaseResponse) dto.Testcase {
+// ResponseToTestcase 将gRPC测试用例转换为DTO测试用例
+func ResponseToTestcase(tc *pb.TestcaseResponse) dto.Testcase {
 	return dto.Testcase{
 		TestInput:         tc.TestInput,
 		TestOutput:        tc.TestOutput,
