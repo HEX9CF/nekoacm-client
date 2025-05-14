@@ -16,7 +16,7 @@ type ClientTokenAuth struct {
 
 func (c ClientTokenAuth) GetRequestMetadata(ctx context.Context, uri ...string) (map[string]string, error) {
 	return map[string]string{
-		"authorization": "Bearer " + config.Conf.NekoGrpc.Token,
+		"authorization": "Bearer " + config.Conf.NekoAcm.Token,
 	}, nil
 }
 

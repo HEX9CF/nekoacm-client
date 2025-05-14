@@ -4,7 +4,7 @@ import "nekoacm-client/pkg/config"
 
 func InitNekoAcm() error {
 	var err error
-	conf := config.Conf.NekoGrpc
+	conf := config.Conf.NekoAcm
 	address := conf.Host + ":" + conf.Port
 
 	err = createConn(address)

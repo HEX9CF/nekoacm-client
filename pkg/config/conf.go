@@ -5,8 +5,8 @@ import (
 )
 
 type Config struct {
-	Server   ServerConf   `yaml:"server" json:"server"`
-	NekoGrpc NekoGrpcConf `yaml:"neko-grpc" json:"neko-grpc"`
+	Server  ServerConf  `yaml:"server" json:"server"`
+	NekoAcm NekoAcmConf `yaml:"nekoacm" json:"nekoacm"`
 }
 
 // InitConfig 初始化
@@ -31,5 +31,5 @@ func InitConfig() error {
 
 func (c *Config) Default() {
 	c.Server.Default()
-	c.NekoGrpc.Default()
+	c.NekoAcm.Default()
 }

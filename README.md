@@ -2,6 +2,10 @@
 
 NekoACM: Neural-network Engine Kit of ACM-ICPC
 
+## 项目简介
+
+一个 NekoACM 的客户端实现，提供终端命令行、对话模式和 HTTP API 接口，可以与 NekoACM 服务器进行交互。支持解析题目、翻译题目、生成题目、生成测试数据、生成题解、虚拟评测等功能。
+
 ## 操作模式
 
 ### 终端启动模式

@@ -1,7 +1,7 @@
 server:
     port: 14515
     token:
-neko-grpc:
+nekoacm:
     host: localhost
     port: 14516
     token:
