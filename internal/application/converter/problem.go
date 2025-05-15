@@ -2,7 +2,7 @@ package converter
 
 import (
 	"nekoacm-client/internal/application/dto"
-	"nekoacm-client/pkg/pb"
+	"nekoacm-common/api/proto/pb"
 )
 
 // ProblemInstructionToRequest 将题目指令DTO转换为gRPC请求

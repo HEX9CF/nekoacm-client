@@ -6,7 +6,7 @@ import (
 	"nekoacm-client/internal/application/converter"
 	"nekoacm-client/internal/application/dto"
 	"nekoacm-client/internal/infrastructure/neko"
-	"nekoacm-client/pkg/utils"
+	"nekoacm-common/pkg/utils"
 	"strconv"
 	"time"
 )

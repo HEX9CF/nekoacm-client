@@ -5,7 +5,7 @@ import (
 	"log"
 	"nekoacm-client/internal/application/converter"
 	"nekoacm-client/internal/infrastructure/neko"
-	"nekoacm-client/pkg/pb"
+	"nekoacm-common/api/proto/pb"
 	"time"
 )
 

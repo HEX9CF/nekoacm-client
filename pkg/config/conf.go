@@ -1,7 +1,11 @@
 package config
 
 import (
-	"nekoacm-client/pkg/utils"
+	"nekoacm-common/pkg/utils"
+)
+
+var (
+	Conf *Config = &Config{}
 )
 
 type Config struct {

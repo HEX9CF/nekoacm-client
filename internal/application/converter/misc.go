@@ -2,7 +2,7 @@ package converter
 
 import (
 	"nekoacm-client/internal/application/dto"
-	"nekoacm-client/pkg/pb"
+	"nekoacm-common/api/proto/pb"
 )
 
 // JokeToResponse 将笑话DTO转换为gRPC响应

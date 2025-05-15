@@ -1,7 +1,7 @@
 package neko
 
 import (
-	"nekoacm-client/pkg/pb"
+	"nekoacm-common/api/proto/pb"
 )
 
 // 全局客户端变量

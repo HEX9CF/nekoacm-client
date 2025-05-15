@@ -2,7 +2,7 @@ package converter
 
 import (
 	"nekoacm-client/internal/application/dto"
-	"nekoacm-client/pkg/pb"
+	"nekoacm-common/api/proto/pb"
 )
 
 // ChatMsgToRequest 将DTO转换为gRPC请求
