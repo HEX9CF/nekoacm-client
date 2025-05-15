@@ -1,6 +1,7 @@
 package config
 
 import (
+	"nekoacm-common/pkg/config"
 	"nekoacm-common/pkg/utils"
 )
 
@@ -9,8 +10,9 @@ var (
 )
 
 type Config struct {
-	Server  ServerConf  `yaml:"server" json:"server"`
-	NekoAcm NekoAcmConf `yaml:"nekoacm" json:"nekoacm"`
+	Server  ServerConf       `yaml:"server" json:"server"`
+	NekoAcm NekoAcmConf      `yaml:"nekoacm" json:"nekoacm"`
+	Nacos   config.NacosConf `yaml:"nacos" json:"nacos"`
 }
 
 // InitConfig 初始化
@@ -36,4 +38,5 @@ func InitConfig() error {
 func (c *Config) Default() {
 	c.Server.Default()
 	c.NekoAcm.Default()
+	c.Nacos.Default()
 }
