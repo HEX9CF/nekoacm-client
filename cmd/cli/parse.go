@@ -7,6 +7,7 @@ import (
 	"log"
 	"nekoacm-client/internal/application/dto"
 	"nekoacm-client/internal/application/service"
+	"nekoacm-common/pkg/utils"
 	"os"
 	"strings"
 )
@@ -49,7 +50,13 @@ var ParseCmd = &cobra.Command{
 				}
 				continue
 			}
-			fmt.Println("题目解析成功")
+
+			str, err := utils.PrettyStruct(p)
+			if err != nil {
+				log.Println(err)
+				return err
+			}
+			fmt.Println(str)
 
 			// 保存到文件
 			err = saveProblemJson(reader, p)

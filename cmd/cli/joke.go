@@ -22,7 +22,7 @@ var JokeCmd = &cobra.Command{
 		for {
 			// 生成笑话
 			fmt.Println("正在生成笑话...")
-			_, err := service.TellJoke()
+			joke, err := service.TellJoke()
 			if err != nil {
 				log.Println(err)
 
@@ -40,14 +40,15 @@ var JokeCmd = &cobra.Command{
 				}
 				continue
 			}
-			fmt.Println("笑话生成成功")
+
+			fmt.Println(joke)
 
 			// 继续生成
 			_, err = reader.Discard(reader.Buffered())
 			if err != nil {
 				return err
 			}
-			fmt.Print("要不要再来一个(Y/N)?")
+			fmt.Print("再来一个(Y/N)?")
 			again, _ := reader.ReadString('\n')
 			again = strings.TrimSpace(again)
 			again = strings.ToLower(again)

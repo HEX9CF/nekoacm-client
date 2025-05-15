@@ -7,6 +7,7 @@ import (
 	"log"
 	"nekoacm-client/internal/application/dto"
 	"nekoacm-client/internal/application/service"
+	"nekoacm-common/pkg/utils"
 	"os"
 	"strings"
 )
@@ -45,7 +46,13 @@ var SolutionCmd = &cobra.Command{
 				}
 				continue
 			}
-			fmt.Println("题解生成成功")
+
+			str, err := utils.PrettyStruct(s)
+			if err != nil {
+				log.Println(err)
+				return err
+			}
+			fmt.Println(str)
 
 			// 保存到文件
 			err = saveSolutionJson(reader, s)
